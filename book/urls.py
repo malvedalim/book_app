@@ -15,16 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-import reviews.views
 from reviews import views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls) , \
+    # path('', views.welcome_view, name='welcome_view'),
     # path('index/', reviews.views.index), \
     # path('search/', reviews.views.search), \
-    path('', include('reviews.urls')),
-    path('books', reviews.views.book_list, name='book_list')
+    # path('', include('reviews.urls')),
+    path('books/', views.book_list, name='book_list')
 
 
 ]

@@ -1,9 +1,6 @@
 from django.db import models
 from django.contrib import auth
 
-
-
-
 class Publisher(models.Model):
     """The firm that publishes the book"""
     name = models.CharField(
@@ -21,6 +18,7 @@ class Publisher(models.Model):
 
 class Book(models.Model):
     """The details about the book"""
+
     title = models.CharField (
         max_length=70,
         help_text="The title of the book"
@@ -45,11 +43,11 @@ class Book(models.Model):
 
 class Contributor(models.Model):
     """A contributor to the book e.g author,publisher,editor, co-author"""
-    first_name = models.CharField(
+    first_names = models.CharField(
         max_length=50,
         help_text="Contributor's first name"
     )
-    last_name = models.CharField (
+    last_names = models.CharField (
         max_length=60,
         help_text="Contributor's last name."
 
